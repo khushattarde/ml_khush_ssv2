@@ -1,0 +1,9 @@
+feat,model,acc,acc_pair_classes,acc_static_classes
+cls,single,0.297±0.016,0.293±0.013,0.315±0.037
+cls,meanpool,0.322±0.010,0.313±0.012,0.360±0.015
+cls,transformer,0.312±0.014,0.319±0.016,0.285±0.029
+cls,transformer_shuftrain,0.309±0.009,0.314±0.011,0.290±0.027
+cls+grid,single,0.314±0.013,0.330±0.016,0.250±0.011
+cls+grid,meanpool,0.361±0.024,0.364±0.024,0.350±0.033
+cls+grid,transformer,0.398±0.009,0.420±0.008,0.312±0.034
+cls+grid,transformer_shuftrain,0.381±0.011,0.404±0.009,0.288±0.034

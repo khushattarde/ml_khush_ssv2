@@ -1,0 +1,5 @@
+features,acc,reversal_swap_rate
+single frame (middle),0.312,0.222
+mean pool (order-free),0.332,0.244
+first+last (order-aware),0.408,0.134
+mean + (last-first),0.458,0.094

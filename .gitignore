@@ -21,19 +21,12 @@ data/
 datasets/
 
 # Generated embeddings and checkpoints
-embeddings/
 checkpoints/
 *.pth
 *.pt
 *.ckpt
 *.safetensors
 *.onnx
-
-# Results and logs
-results/*
-!results/.gitkeep
-logs/
-*.log
 
 # OS/editor
 .DS_Store

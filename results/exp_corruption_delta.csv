@@ -1,0 +1,8 @@
+,single,meanpool,transformer,transformer_delta
+clean,0.0,0.0,0.0,0.0
+blur (all frames),-0.091,-0.116,-0.134,-0.188
+noise (all frames),-0.057,-0.093,-0.118,-0.17
+occlusion (all frames),-0.03,-0.033,-0.038,-0.131
+occlusion (50% of frames),-0.025,-0.006,-0.009,-0.077
+drop 50% of frames,-0.006,-0.01,-0.014,0.045
+drop 75% of frames,-0.012,-0.007,-0.017,-0.006
