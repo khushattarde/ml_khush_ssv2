@@ -1,4 +1,4 @@
-# SSv2 Action Recognition — Temporal Order Matters
+# SSv2 -- Temporal Order Understanding
 
 A reproducible pipeline for **action recognition on a 10-class subset of Something-Something-V2 (SSv2)**,
 built around the question:
