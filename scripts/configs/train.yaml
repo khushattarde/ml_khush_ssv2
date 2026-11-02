@@ -1,0 +1,25 @@
+# Train-only config — use this to retrain with different hyper-params without
+# re-running data prep or embedding extraction. Run with:
+#   python scripts/train_models.py --config scripts/configs/train.yaml
+
+train:
+  checkpoints_dir: "models"
+  encoders: ["dino"]                       # train only DINOv2 models by default
+  models:
+    - "single_frame"
+    - "mean_pool"
+    - "gru"
+    - "tcn"
+    - "transformer"
+    - "delta_transformer"
+  seeds: [0, 1, 2, 3, 4]                   # bump to 5 seeds for the final run
+  epochs: 40
+  batch_size: 64
+  lr: 1.0e-3
+  weight_decay: 0.05
+  d_model: 128
+  dropout: 0.3
+  label_smoothing: 0.1
+  grad_clip: 1.0
+  pct_start: 0.1
+  num_workers: 0

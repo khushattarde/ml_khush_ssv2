@@ -1,0 +1,16 @@
+# Data-only config — use this if you only want to run Stages 1-2 (download + frame decode)
+# without touching embeddings / training. Run with:
+#   python scripts/download_data.py --config scripts/configs/data.yaml
+#   python scripts/prepare_dataset.py --config scripts/configs/data.yaml
+
+data:
+  raw_dir: "data/raw"
+  labels_pkg_dir: "data/labels_pkg"
+  frames_path: "data/frames.npy"
+  index_csv: "results/dataset_index.csv"
+  parts: ["00", "01"]
+  n_frames: 16
+  img_size: 224
+  max_train_per_class: 150
+  max_val_per_class: 40
+  seed: 0

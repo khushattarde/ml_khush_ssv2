@@ -1,0 +1,42 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+venv/
+.venv/
+env/
+
+# Secrets
+.env
+*.pem
+*.key
+
+# Dataset
+data/
+datasets/
+
+# Generated embeddings and checkpoints
+embeddings/
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.onnx
+
+# Results and logs
+results/*
+!results/.gitkeep
+logs/
+*.log
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

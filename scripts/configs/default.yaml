@@ -1,0 +1,68 @@
+# Default config — single source of truth for the whole pipeline.
+# Override any field with a custom YAML passed to --config, or with --set path.to.field=value.
+# Every path is relative to the repo root unless absolute.
+
+root: ""                    # filled in at load time = repo root
+
+data:
+  raw_dir: "data/raw"
+  labels_pkg_dir: "data/labels_pkg"
+  frames_path: "data/frames.npy"
+  index_csv: "results/dataset_index.csv"
+  parts: ["00", "01"]       # SSv2 tar parts; ~9 GB each
+  n_frames: 16
+  img_size: 224
+  max_train_per_class: 150
+  max_val_per_class: 40
+  seed: 0
+
+embeddings:
+  cache_dir: "embeddings"
+  encoders: ["dino", "clip", "siglip", "internvit"]
+  clips_per_batch: 8        # 8 clips × 16 frames = 128 frames per forward
+  internvit_clips_per_batch: 4
+  internvit_resolution: 448
+  use_fp16: true
+  overflow_guard: true
+
+train:
+  checkpoints_dir: "models"
+  encoders: ["dino", "clip", "siglip"]
+  models:
+    - "single_frame"
+    - "mean_pool"
+    - "gru"
+    - "tcn"
+    - "transformer"
+    - "delta_transformer"
+    - "gru_shuftrain"
+    - "tcn_shuftrain"
+    - "transformer_shuftrain"
+    - "delta_transformer_shuftrain"
+  seeds: [0, 1, 2]
+  epochs: 40
+  batch_size: 64
+  lr: 1.0e-3
+  weight_decay: 0.05
+  d_model: 128
+  dropout: 0.3
+  label_smoothing: 0.1
+  grad_clip: 1.0
+  pct_start: 0.1
+  num_workers: 0
+
+eval:
+  results_dir: "results"
+  bootstrap_samples: 2000
+  robustness_ks: [1, 2, 3, 4, 6, 8, 12, 16]
+  corruption_fracs: [1.0, 0.5]
+
+vlm:
+  output_dir: "vlm"
+  models:
+    "Qwen2-VL-2B": "Qwen/Qwen2-VL-2B-Instruct"
+    "SmolVLM2-500M": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct"
+  n_per_class: 10
+  n_qualitative: 6
+  n_frames_per_clip: 8
+  seed: 0
